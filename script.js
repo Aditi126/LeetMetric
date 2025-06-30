@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     async function fetchUserDetails(username) {
-        const url = "https://leetcode-stats-api.herokuapp.com/" + username;
+        const url = `https://leetcode-api-faisalshohag.vercel.app/${username}`;
         try {
             const response = await fetch(url);
             if (response.ok) {
