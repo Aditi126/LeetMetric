@@ -9,8 +9,7 @@
 ## 🚀 Features
 
 - 🔍 Search for any LeetCode username
-- 📈 Visualize stats like problems solved, ranking, streaks, and more
-- 🌙 Light/Dark mode support
+- 📈 Visualize stats like problems solved, ranking, and more
 - 📱 Fully responsive across devices
 - ⚡ Fast and lightweight (Vercel deployed)
 
