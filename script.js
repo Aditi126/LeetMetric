@@ -37,7 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(data);
                 rank.innerHTML = data['ranking'] || 'N/A';
                 problems.innerHTML = data['totalSolved'] || '0';
-                acceptance.innerHTML = data['acceptanceRate'] ? `${parseFloat(data['acceptanceRate']).toFixed(2)}%` : '0%';
+                
+                if (data['acceptanceRate']) {
+                    acceptance.innerHTML = `${parseFloat(data['acceptanceRate']).toFixed(2)}%`;
+                } else if (data['totalSolved'] && data['totalEasy'] && data['totalMedium'] && data['totalHard']) {
+                    const totalProblems = data['totalEasy'] + data['totalMedium'] + data['totalHard'];
+                    const acceptanceRate = ((data['totalSolved'] / totalProblems) * 100).toFixed(2);
+                    acceptance.innerHTML = `${acceptanceRate}%`;
+                } else {
+                    acceptance.innerHTML = 'N/A';
+                }
+
                 submissions.innerHTML = data['submissionCalendar'] ? Object.keys(data['submissionCalendar']).length : '0';
                 if (data['status'] == 'error') {
                     alert(data['message']);
