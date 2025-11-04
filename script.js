@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 const data = await response.json();
                 console.log(data);
-                rank.innerHTML = data['ranking'];
-                problems.innerHTML = data['totalSolved'];
-                acceptance.innerHTML = data['acceptanceRate'];
-                submissions.innerHTML = Object.keys(data.submissionCalendar).length;
+                rank.innerHTML = data['ranking'] || 'N/A';
+                problems.innerHTML = data['totalSolved'] || '0';
+                acceptance.innerHTML = data['acceptanceRate'] ? `${parseFloat(data['acceptanceRate']).toFixed(2)}%` : '0%';
+                submissions.innerHTML = data['submissionCalendar'] ? Object.keys(data['submissionCalendar']).length : '0';
                 if (data['status'] == 'error') {
                     alert(data['message']);
                 }
