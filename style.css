@@ -64,6 +64,7 @@ body{
     background-color: rgb(100 210 255 );
     border-radius: 5px;
     font-size: xx-small;
+    cursor: pointer;
 }
 
 .circle-div{
