@@ -21,7 +21,17 @@
 - **CSS**
 - **JavaScript**
 - **Vercel** for deployment
+- **Docker** for containerized image
 
 ## 🛠️ Other Technologies 
 
 - **REST APIs**
+
+## 🚀 Quick Start (Docker)
+
+```bash
+# Pull image from Docker Hub
+docker pull aditiib/leetmetric-app:latest
+
+# Run the container
+docker run -d -p 8080:80 aditiib/leetmetric-app:latest
